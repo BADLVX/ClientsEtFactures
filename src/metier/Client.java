@@ -7,9 +7,11 @@ public class Client
 {
 	int num;
 	String nom;
+	ArrayList<Facture> ListeFacture = new ArrayList<>();
 	
 	public Client(String nom)
 	{
+		this.nom = nom;
 	}
 
 	/**
@@ -40,7 +42,8 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		return null;
+		ListeFacture.add(Facture);
+		return new Facture(montant);
 	}
 	
 	/**
@@ -72,7 +75,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return null;
+		return new Facture(montant, reglee);
 	}	
 	
 	/**
