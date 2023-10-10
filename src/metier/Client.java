@@ -64,11 +64,11 @@ public class Client
 	
 	public int sommeMontants()
 	{
-		for(int i=1; i <= Liste.size(); i++) {
+		/*for(int i=1; i <= Liste.size(); i++) {
 			int somme = 0;
 			Facture.getMontant();
 			somme = somme + element;
-		}
+		}*/
 		return 0;
 	}
 
