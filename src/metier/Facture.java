@@ -8,6 +8,7 @@ public class Facture
 	static LocalDate date;
 	boolean reglee;
 	
+	
 	public Facture(int montant, boolean regleee) {
 		this.montant = montant;
 		this.reglee = reglee;
@@ -43,7 +44,8 @@ public class Facture
 	
 	public boolean estReglee()
 	{
-		return true;
+		new Facture(montant, reglee);
+		return (reglee == true) ? true : false;
 	}
 
 	/**
@@ -53,7 +55,7 @@ public class Facture
 	
 	public LocalDate getDate()
 	{
-		return null;
+		return date;
 	}
 
 	/**
@@ -62,6 +64,7 @@ public class Facture
 	
 	public void delete()
 	{
+		Facture Facture = new Facture(0, false);
 	}
 	
 	/**
@@ -71,6 +74,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return null;
+		return new Facture(montant, reglee);
 	}
 }

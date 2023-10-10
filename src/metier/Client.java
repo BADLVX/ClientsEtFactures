@@ -3,11 +3,11 @@ package metier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client
+public class Client 
 {
 	int num;
 	String nom;
-	ArrayList<Facture> ListeFacture = new ArrayList<>();
+	static ArrayList<Facture> Liste = new ArrayList<>();
 	
 	public Client(String nom)
 	{
@@ -42,8 +42,9 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		ListeFacture.add(Facture);
-		return new Facture(montant);
+		Facture Facture = new Facture(montant);
+		Liste.add(Facture);
+		return Facture;
 	}
 	
 	/**
@@ -53,7 +54,7 @@ public class Client
 
 	public List<Facture> getFactures()
 	{
-		return null;
+		return Liste;
 	}
 	
 	/**
@@ -63,6 +64,11 @@ public class Client
 	
 	public int sommeMontants()
 	{
+		for(int i=1; i <= Liste.size(); i++) {
+			int somme = 0;
+			Facture.getMontant();
+			somme = somme + element;
+		}
 		return 0;
 	}
 
