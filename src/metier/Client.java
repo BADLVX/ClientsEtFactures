@@ -6,8 +6,10 @@ import java.util.List;
 public class Client 
 {
 	int num;
-	String nom;
-	static ArrayList<Facture> Liste = new ArrayList<>();
+	static String nom;
+	static ArrayList<Client> listeClients = new ArrayList<>();
+	static ArrayList<Facture> listeFactures = new ArrayList<>();
+	static ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
 	
 	public Client(String nom)
 	{
@@ -19,9 +21,9 @@ public class Client
 	 * @return le nom du client.
 	 */
 	
-	public String getNom()
+	public static String getNom()
 	{
-		return this.nom;
+		return nom;
 	}
 	
 	/**
@@ -42,9 +44,9 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		Facture Facture = new Facture(montant);
-		Liste.add(Facture);
-		return Facture;
+		Facture facture = new Facture(montant);
+		listeFactures.add(facture);
+		return facture;
 	}
 	
 	/**
@@ -54,7 +56,7 @@ public class Client
 
 	public List<Facture> getFactures()
 	{
-		return Liste;
+		return listeFactures;
 	}
 	
 	/**
@@ -64,12 +66,13 @@ public class Client
 	
 	public int sommeMontants()
 	{
-		/*for(int i=1; i <= Liste.size(); i++) {
-			int somme = 0;
-			Facture.getMontant();
-			somme = somme + element;
-		}*/
-		return 0;
+		int somme = 0;
+		for(int i=1; i <= listeFactures.size(); i++) {
+			Facture facture = listeFactures.get(i);
+			 int montant = facture.getMontant();
+			 somme += montant;
+		}
+		return somme;
 	}
 
 	/**
@@ -91,7 +94,13 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
-		return null;
+		for(int i=1; i <= listeFactures.size(); i++) {
+			Facture facture = listeFactures.get(i);
+			if (facture.estReglee() == true)
+				listeFacturesReglee.add(listeFactures.get(i));
+		}
+		
+		return listeFacturesReglee;
 	}
 	
 
@@ -101,14 +110,21 @@ public class Client
 	 */
 	public static List<Client> tous()
 	{
-		return null;
+		ArrayList<Client> listeClientsCopie = new ArrayList<>(listeClients);
+		return listeClientsCopie;
+		/*ùClient elementClient;
+		List<Client> copieListeClients = new List<>();
+		for (listeClients : elementClient)
+			copieListeClients.add(elementClient.clone());
+		return copieListeClients;*/
 	}
 	
 	/**
 	 * Supprime le client.
 	 */
 	
-	public void delete()
+	public void delete(Client c)
 	{
+		listeClients.remove(num);
 	}
 }

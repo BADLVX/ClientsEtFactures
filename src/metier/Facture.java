@@ -24,7 +24,8 @@ public class Facture
 	
 	public Client getClient()
 	{
-		return new Client(null);
+		Client client = new Client(Client.getNom());
+		return client;
 	}
 
 	/**
@@ -34,7 +35,7 @@ public class Facture
 	
 	public int getMontant()
 	{
-		return this.montant;
+		return montant;
 	}
 
 	/**
@@ -74,6 +75,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(montant, reglee);
+		return new Facture(getMontant(), estReglee());
 	}
 }
