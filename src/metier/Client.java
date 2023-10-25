@@ -112,7 +112,7 @@ public class Client
 	{
 		ArrayList<Client> listeClientsCopie = new ArrayList<>(listeClients);
 		return listeClientsCopie;
-		/*ùClient elementClient;
+		/*Client elementClient;
 		List<Client> copieListeClients = new List<>();
 		for (listeClients : elementClient)
 			copieListeClients.add(elementClient.clone());
@@ -123,7 +123,7 @@ public class Client
 	 * Supprime le client.
 	 */
 	
-	public void delete(Client c)
+	public void delete()
 	{
 		listeClients.remove(num);
 	}
