@@ -9,7 +9,6 @@ public class Client
 	static String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	static ArrayList<Facture> listeFactures = new ArrayList<>();
-	static ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
 	
 	public Client(String nom)
 	{
@@ -20,10 +19,16 @@ public class Client
 	 * Retourne le nom du client.
 	 * @return le nom du client.
 	 */
+	public static String getNom(Client client) {
+		return client.nom;
+	}
 	
-	public static String getNom()
+	public static int getIndice(String nom)
 	{
-		return nom;
+		for(i=0;i<listeClients.size();i++) {
+			if(listeClients(i).getNom().compareTo(nom) == true)
+				return i; }
+		return -1;
 	}
 	
 	/**
@@ -94,6 +99,8 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
+		ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
+
 		for(int i=1; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
 			if (facture.estReglee() == true)
@@ -110,13 +117,8 @@ public class Client
 	 */
 	public static List<Client> tous()
 	{
-		ArrayList<Client> listeClientsCopie = new ArrayList<>(listeClients);
+		ArrayList<Client> listeClientsCopie = new ArrayList<Client>(listeClients);
 		return listeClientsCopie;
-		/*Client elementClient;
-		List<Client> copieListeClients = new List<>();
-		for (listeClients : elementClient)
-			copieListeClients.add(elementClient.clone());
-		return copieListeClients;*/
 	}
 	
 	/**

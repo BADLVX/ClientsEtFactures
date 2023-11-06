@@ -24,8 +24,7 @@ public class Facture
 	
 	public Client getClient()
 	{
-		Client client = new Client(Client.getNom());
-		return client;
+		return new Client(Client.getNom());
 	}
 
 	/**
