@@ -6,9 +6,9 @@ import java.util.List;
 public class Client 
 {
 	int num;
-	static String nom;
+	String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
-	static ArrayList<Facture> listeFactures = new ArrayList<>();
+	ArrayList<Facture> listeFactures = new ArrayList<>();
 	
 	public Client(String nom)
 	{
@@ -19,8 +19,8 @@ public class Client
 	 * Retourne le nom du client.
 	 * @return le nom du client.
 	 */
-	public static String getNom(Client client) {
-		return client.nom;
+	public String getNom(int num) {
+		return nom;
 	}
 	
 	public static int getIndice(String nom)
