@@ -23,13 +23,13 @@ public class Client
 		return nom;
 	}
 	
-	public static int getIndice(String nom)
+	/*public static int getIndice(String nom)
 	{
-		for(i=0;i<listeClients.size();i++) {
+		for(int i=0;i<listeClients.size();i++) {
 			if(listeClients(i).getNom().compareTo(nom) == true)
 				return i; }
 		return -1;
-	}
+	}*/
 	
 	/**
 	 * Modifie le nom du client.
