@@ -10,6 +10,8 @@ public class Client
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	ArrayList<Facture> listeFactures = new ArrayList<>();
 	
+	
+	
 	public Client(String nom)
 	{
 		this.nom = nom;
@@ -49,7 +51,7 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		Facture facture = new Facture(montant);
+		Facture facture = new Facture(montant, this);
 		listeFactures.add(facture);
 		return facture;
 	}
@@ -89,7 +91,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return new Facture(montant, reglee);
+		return new Facture(montant, reglee, this);
 	}	
 	
 	/**
