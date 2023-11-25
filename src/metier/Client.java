@@ -19,7 +19,7 @@ public class Client
 	 * Retourne le nom du client.
 	 * @return le nom du client.
 	 */
-	public String getNom(int num) {
+	public String getNom() {
 		return nom;
 	}
 	
