@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Client 
 {
-	int num;
 	String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	ArrayList<Facture> listeFactures = new ArrayList<>();
@@ -15,6 +14,7 @@ public class Client
 	public Client(String nom)
 	{
 		this.nom = nom;
+		listeClients.add(this);
 	}
 
 	/**
@@ -25,13 +25,13 @@ public class Client
 		return nom;
 	}
 	
-	/*public static int getIndice(String nom)
+	/** public static int getIndice(String nom)
 	{
 		for(int i=0;i<listeClients.size();i++) {
 			if(listeClients(i).getNom().compareTo(nom) == true)
 				return i; }
 		return -1;
-	}*/
+	}**/
 	
 	/**
 	 * Modifie le nom du client.
@@ -129,6 +129,7 @@ public class Client
 	
 	public void delete()
 	{
-		listeClients.remove(num);
+		listeClients.remove(this);
+		this.delete();
 	}
 }

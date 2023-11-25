@@ -16,8 +16,8 @@ public class Facture
 		this.clientFacture = clientFacture;
 	}
 		
-		public Facture(int montant, Client clientFact) {
-			this(montant, false, clientFact);
+		public Facture(int montant, Client clientFacture) {
+			this(montant, false, clientFacture);
 	}
 	/**
 	 * Retourne le client à qui est adressée la facture..
@@ -26,7 +26,7 @@ public class Facture
 	
 		public Client getClient()
 		{
-			return this;
+			return this.clientFacture;
 		}
 
 	/**
@@ -46,7 +46,7 @@ public class Facture
 	
 	public boolean estReglee()
 	{
-		new Facture(montant, reglee);
+		new Facture(montant,reglee, clientFacture);
 		return (reglee == true) ? true : false;
 	}
 
@@ -66,7 +66,7 @@ public class Facture
 	
 	public void delete()
 	{
-		Facture Facture = new Facture(0, false);
+		this.delete();
 	}
 	
 	/**
@@ -76,6 +76,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(getMontant(), estReglee());
+		return new Facture(getMontant(), estReglee(), clientFacture);
 	}
 }
