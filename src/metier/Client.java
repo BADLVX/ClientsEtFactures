@@ -62,9 +62,10 @@ public class Client
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public List<Facture> getFactures()
+	public ArrayList<Facture> getFactures()
 	{
-		return listeFactures;
+		ArrayList<Facture> listeFacturesCopie = new ArrayList<Facture>(listeFactures);
+		return listeFacturesCopie;
 	}
 	
 	/**
