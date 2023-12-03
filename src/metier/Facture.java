@@ -46,7 +46,6 @@ public class Facture
 	
 	public boolean estReglee()
 	{
-		new Facture(montant,reglee, clientFacture);
 		return (reglee == true) ? true : false;
 	}
 
