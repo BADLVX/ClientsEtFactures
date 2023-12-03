@@ -131,6 +131,5 @@ public class Client
 	public void delete()
 	{
 		listeClients.remove(this);
-		this.delete();
 	}
 }
