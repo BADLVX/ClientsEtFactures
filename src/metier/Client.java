@@ -2,6 +2,7 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class Client 
 {
@@ -51,7 +52,7 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		Facture facture = new Facture(montant, this);
+		Facture facture = new Facture(montant, false, this, LocalDate.now());
 		listeFactures.add(facture);
 		return facture;
 	}
@@ -91,7 +92,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return new Facture(montant, reglee, this);
+		return new Facture(montant, reglee, this, LocalDate.now());
 	}	
 	
 	/**

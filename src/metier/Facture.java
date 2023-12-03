@@ -5,19 +5,20 @@ import java.time.LocalDate;
 public class Facture 
 {
 	int montant;
-	static LocalDate date;
+	LocalDate date;
 	boolean reglee;
 	Client clientFacture;
 	
 	
-	public Facture(int montant, boolean reglee, Client clientFacture) {
+	public Facture(int montant, boolean reglee, Client clientFacture, LocalDate date) {
+		this.date = date;
 		this.montant = montant;
 		this.reglee = reglee;
 		this.clientFacture = clientFacture;
 	}
 		
 		public Facture(int montant, Client clientFacture) {
-			this(montant, false, clientFacture);
+			this(montant, false, clientFacture, LocalDate.now());
 	}
 	/**
 	 * Retourne le client à qui est adressée la facture..
@@ -46,7 +47,7 @@ public class Facture
 	
 	public boolean estReglee()
 	{
-		return (reglee == true) ? true : false;
+		return reglee ;
 	}
 
 	/**
@@ -75,6 +76,8 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(getMontant(), estReglee(), clientFacture);
+		Facture copieFacture = new Facture(getMontant(), estReglee(), clientFacture, getDate());
+		clientFacture.listeFactures.add(copieFacture);
+		return copieFacture;
 	}
 }
