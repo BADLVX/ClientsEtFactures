@@ -66,8 +66,9 @@ public class Facture
 	
 	public void delete()
 	{
-		clientFacture.listeFactures.remove(this);
-		this.delete();
+		Facture facture = this;
+		clientFacture.listeFactures.remove(facture);
+		facture.delete();
 	}
 	
 	/**
