@@ -10,7 +10,7 @@ public class Facture
 	Client clientFacture;
 	
 	
-	public Facture(int montant, boolean regleee, Client clientFacture) {
+	public Facture(int montant, boolean reglee, Client clientFacture) {
 		this.montant = montant;
 		this.reglee = reglee;
 		this.clientFacture = clientFacture;
