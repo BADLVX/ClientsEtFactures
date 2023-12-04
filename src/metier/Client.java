@@ -9,6 +9,8 @@ public class Client
 	String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	ArrayList<Facture> listeFactures = new ArrayList<>();
+	ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
+	
 	
 	
 	
@@ -93,7 +95,10 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return new Facture(montant, reglee, this, LocalDate.now());
+		
+		Facture factureReglee = new Facture(montant, reglee, this, LocalDate.now());
+		listeFacturesReglee.add(factureReglee);
+		return factureReglee;
 	}	
 	
 	/**
