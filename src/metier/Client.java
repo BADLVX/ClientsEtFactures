@@ -77,13 +77,12 @@ public class Client
 	
 	public int sommeMontants()
 	{
-		int somme = 0;
-		for(int i=1; i <= listeFactures.size(); i++) {
+		int montant = 0;
+		for(int i=0; i < listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
-			 int montant = facture.getMontant();
-			 somme += montant;
+			 montant = montant + facture.getMontant(); 
 		}
-		return somme;
+		return montant;
 	}
 
 	/**
