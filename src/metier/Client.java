@@ -108,7 +108,7 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
-		for(int i=1; i <= listeFactures.size(); i++) {
+		for(int i=0; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
 			if (facture.estReglee())
 				listeFacturesReglee.add(facture);
