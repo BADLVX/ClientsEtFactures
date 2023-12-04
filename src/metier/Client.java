@@ -95,7 +95,6 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		
 		Facture facture = new Facture(montant, reglee, this, LocalDate.now());
 		listeFactures.add(facture);
 		return facture;
@@ -111,6 +110,7 @@ public class Client
 		ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
 		for(int i=0; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
+			System.out.println(facture);
 			if (facture.estReglee())
 				listeFacturesReglee.add(facture);
 		}
