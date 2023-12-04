@@ -9,7 +9,7 @@ public class Client
 	String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	ArrayList<Facture> listeFactures = new ArrayList<>();
-	ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
+
 	
 	
 	
@@ -108,6 +108,7 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
+		ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
 		for(int i=0; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
 			if (facture.estReglee())
