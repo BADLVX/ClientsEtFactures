@@ -110,7 +110,7 @@ public class Client
 		ArrayList<Facture> listeFacturesReglee = new ArrayList<>();
 		for(int i=0; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
-			System.out.println(facture);
+			System.out.println(facture.estReglee());
 			if (facture.estReglee())
 				listeFacturesReglee.add(facture);
 		}
