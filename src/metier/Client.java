@@ -96,9 +96,9 @@ public class Client
 	public Facture createFacture(int montant, boolean reglee)
 	{
 		
-		Facture factureReglee = new Facture(montant, reglee, this, LocalDate.now());
-		listeFacturesReglee.add(factureReglee);
-		return factureReglee;
+		Facture facture = new Facture(montant, reglee, this, LocalDate.now());
+		listeFactures.add(facture);
+		return facture;
 	}	
 	
 	/**
@@ -108,11 +108,11 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
-		/*for(int i=1; i <= listeFactures.size(); i++) {
+		for(int i=1; i <= listeFactures.size(); i++) {
 			Facture facture = listeFactures.get(i);
-			if (facture.estReglee() == true)
-				listeFacturesReglee.add(listeFactures.get(i));
-		}*/
+			if (facture.estReglee())
+				listeFacturesReglee.add(facture);
+		}
 		
 		return listeFacturesReglee;
 	}
