@@ -62,7 +62,7 @@ public class Client
 			return facture;
 			}
 		catch(IllegalArgumentException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e);
 			return null;
 		}
 	}
