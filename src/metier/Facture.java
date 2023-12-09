@@ -1,5 +1,6 @@
 package metier;
 
+import java.lang.IllegalArgumentException;
 import java.time.LocalDate;
 
 public class Facture 
@@ -10,8 +11,10 @@ public class Facture
 	Client clientFacture;
 	
 	
-	public Facture(int montant, boolean reglee, Client clientFacture, LocalDate date) {
+	public Facture(int montant, boolean reglee, Client clientFacture, LocalDate date) throws IllegalArgumentException {
 		this.date = date;
+		if(montant <= 0)
+			throw new IllegalArgumentException("Le montant d'une facture ne peut pas être négatif.");
 		this.montant = montant;
 		this.reglee = reglee;
 		this.clientFacture = clientFacture;

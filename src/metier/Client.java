@@ -1,8 +1,10 @@
 package metier;
 
+import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+
 
 public class Client 
 {
@@ -54,10 +56,17 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		Facture facture = new Facture(montant, false, this, LocalDate.now());
-		listeFactures.add(facture);
-		return facture;
+		try {
+			Facture facture = new Facture(montant, false, this, LocalDate.now());
+			listeFactures.add(facture);
+			return facture;
+			}
+		catch(IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
+		
 	
 	/**
 	 * Retourne une copie de la liste des factures du client. 
