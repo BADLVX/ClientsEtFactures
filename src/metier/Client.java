@@ -54,16 +54,13 @@ public class Client
 	 * @return la facture créée.
 	 */
 	
-	public Facture createFacture(int montant)
+	public Facture createFacture(int montant) throws IllegalArgumentException
 	{
-		try {
-			Facture facture = new Facture(montant, false, this, LocalDate.now());
-			listeFactures.add(facture);
-			return facture;
-			}
-		catch(IllegalArgumentException e) {
-			return null;
-		}
+		if(montant <= 0)
+			throw new IllegalArgumentException("Le montant d'une facture ne peut pas être négatif."); 
+		Facture facture = new Facture(montant, false, this, LocalDate.now());
+		listeFactures.add(facture);
+		return facture;
 	}
 		
 	
