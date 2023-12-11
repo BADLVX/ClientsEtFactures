@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class Client 
 {
-	String nom;
+	private String nom;
 	static ArrayList<Client> listeClients = new ArrayList<>();
 	ArrayList<Facture> listeFactures = new ArrayList<>();
 
